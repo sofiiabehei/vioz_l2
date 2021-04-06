@@ -93,15 +93,17 @@ void removeStudent(student** pHeadList) {
     student* prev = NULL, * pCurrent = *pHeadList;
     while (pCurrent != NULL) {
         if ((!prev) &&
-            (pCurrent->nMarks[0] == 2 || pCurrent->nMarks[1] == 2 || pCurrent->nMarks[2] == 2 || pCurrent->nMarks[3] == 2 ||
-                pCurrent->nMarks[4] == 2))
+            (pCurrent->nMarks[0] == 2 || pCurrent->nMarks[1] == 2 || pCurrent->nMarks[2]
+             == 2 || pCurrent->nMarks[3] == 2 ||
+             pCurrent->nMarks[4] == 2))
         {
             *pHeadList = *pHeadList = pCurrent->pNext;
             free(pCurrent);
             pCurrent = *pHeadList;
             continue;
         }
-        if (pCurrent->nMarks[0] == 2 || pCurrent->nMarks[1] == 2 || pCurrent->nMarks[2] == 2 || pCurrent->nMarks[3] == 2 ||
+        if (pCurrent->nMarks[0] == 2 || pCurrent->nMarks[1] == 2 || pCurrent->nMarks[2]
+            == 2 || pCurrent->nMarks[3] == 2 ||
             pCurrent->nMarks[4] == 2)
         {
             prev->pNext = pCurrent->pNext;
